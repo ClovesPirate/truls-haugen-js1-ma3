@@ -6,29 +6,27 @@ async function getGame() {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
 
     const games = data.results;
 
-    console.log(games);
+    gameContainer.innerHTML = "";
 
     for (let i = 0; i < games.length; i++) {
 
       if (i === 8) {
         break;
       }
-    
-      console.log(games[i].name)
 
       gameContainer.innerHTML += 
-      `<div class="game">
+      `<div class="game" style="background-image: url(${games[i].background_image});">
         <h5>${games[i].name}</h5>
         <p>Rating: ${games[i].rating}</p>
-        <p>Tags: ${games[i].tags.length}</p>
+        <p>Number of tags: ${games[i].tags.length}</p>
       </div>`;
     }
+
   } catch(error) {
-    gameContainer.innerHTML = "An error occured";
+    gameContainer.innerHTML = `<div class="error"><p>An error occured while trying to load your request</p></div>`;
     console.log(error);
   }
 };
