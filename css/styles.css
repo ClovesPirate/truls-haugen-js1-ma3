@@ -31,7 +31,6 @@ h5 {
 h5 {
   padding: 0;
   margin: 1rem;
-  border-bottom: 1px solid black;
   font-size: 25px;
 }
 
@@ -80,11 +79,10 @@ p {
     ),
     repeating-linear-gradient(#fff2e755, #fff2e7);
   padding: 0.5rem;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
   border-radius: 5px;
 }
 
 .game:hover {
   opacity: 80%;
+  cursor: pointer;
 }

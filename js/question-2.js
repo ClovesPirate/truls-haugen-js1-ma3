@@ -20,18 +20,18 @@ async function getGame() { // For gamelist, displaying 8 first entries of arrey.
         break;
       }
 
-    gameContainer.innerHTML += 
+    gameContainer.innerHTML += // Name of game, background imagestyling, rating and # of tags.
     `<div class="game" style="background-image: url(${games[i].background_image});">
       <h5>${games[i].name}</h5>
       <div class="content">
-      <p>Rating: ${games[i].rating}/5</p>
-      <p>Tags: ${games[i].tags.length}</p>
+        <p>Rating: ${games[i].rating}/5</p>
+        <p>Tags: ${games[i].tags.length}</p>
       </div>
     </div>`;
     }
 
-  } catch(error) {
-    gameContainer.innerHTML = displayError("An unkown error occured");
+  } catch(error) { // error message displayed to the user
+    gameContainer.innerHTML = displayError();
     console.log(error);
   }
 };
