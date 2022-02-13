@@ -3,7 +3,7 @@ const gameUrl = "https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&order
 
 const gameContainer = document.querySelector(".container");
 
-async function getGame() { // For gamelist, displaying 8 first entries of arrey.
+async function getGame() { // For gamelist, outputing 8 first entries of arrey.
   try {
     const response = await fetch(gameUrl);
     const data = await response.json();
@@ -16,7 +16,7 @@ async function getGame() { // For gamelist, displaying 8 first entries of arrey.
 
     for (let i = 0; i < games.length; i++) {
 
-      if (i === 8) {
+      if (i === 8) { // Change value to display more or fewer games.
         break;
       }
 
